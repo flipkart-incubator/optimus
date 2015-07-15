@@ -28,7 +28,7 @@ Visit the [Quick Start](https://github.com/flipkart-incubator/optimus/wiki/Quick
 
 You can compare models trained using optimus to statistical models by using https://github.com/japerk/nltk-trainer, an awesome tool for easily training statistical classifiers. If you get some good results on a dataset, I would love to know about them! 
 
-In case you face any issue, you can create an issue on github or send me a mail @ devashish.shankar@flipkart.com. Suggestions and improvements are also most welcome. I am setting up a contributors guide, which will have a code walkthrough if you want to contribute. Open github issues are a good place to start. 
+In case you face any issue, you can create an issue on github or send me a mail at devashish.shankar@flipkart.com. Suggestions and improvements are most welcome. Open github issues are a good place to start. A contributor's guide is under works.
 
 ## Core contributors
 * Devashish Shankar ([@devashishshankar](https://github.com/devashishshankar))
