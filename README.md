@@ -7,7 +7,7 @@ The main features of Optimus are:
 * Debug mode: which allows you to visualize what is happening in the internal layers of the model
 * Flask server for querying the trained model through an API
 
-This project is based on: https://github.com/yoonkim/CNN_sentence (Many thanks to Yoon for open sourcing his code for the paper: http://arxiv.org/abs/1408.5882, which is arguably the best generic Deep Learning based text classifier at this point)
+This project is based on: https://github.com/yoonkim/CNN_sentence (Many thanks to Yoon for open sourcing his code for the paper: http://arxiv.org/abs/1408.5882, which is arguably the best generic Deep Learning based text classifier at the time of writing.)
 The improvements over the original code are:
 * Multi-channel mode
 * Complete refactoring to make the code modular
@@ -20,8 +20,12 @@ The improvements over the original code are:
 
 This project is also inspired by https://github.com/japerk/nltk-trainer, which allows users to easily train NLTK based statistical classifiers. 
 
+## Why deep learning?
+Deep learning has dominated pattern recognition in the last few years, especially in image and speech. Recently deep learning models have outperformed statistical classifiers in a variety of NLP tasks as well. Also, one of the biggest advantage of using deep learning models is that task specific feature engineering is not required. The wiki contains a summary of exciting results we obtained using optimus, on a variety of different text classification tasks. Those interested in understanding how this model works can also check out my talk at Fifth elephant, in which I give an introduction to NLP using deep learning. Other good recommended resources can also be found [here].
+
+
 ## Requirements
-Code requires Python 2.7 and Theano 0.7. You can go to the [Setting Up page](https://github.com/flipkart-incubator/optimus/wiki/Setting-Up), for instructions on how to quickly set up the python environment required for this project. Requirements are also listed in the requirements.txt file.
+Code requires Python 2.7 and Theano 0.7. You can go to the [Setting Up page](https://github.com/flipkart-incubator/optimus/wiki/Setting-Up), for instructions on how to quickly set up the python environment required for Optimus. Requirements are also listed in the requirements.txt file.
 
 ## Start Using it
 Visit the [Quick Start](https://github.com/flipkart-incubator/optimus/wiki/Quick-Start) guide to get started on using Optimus!
