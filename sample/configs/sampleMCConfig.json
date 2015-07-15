@@ -1,0 +1,15 @@
+{
+"word2vec":"GoogleNews-vectors-negative300.bin",
+"dim":300,
+"max_l":56,
+"filter_h":5,
+"filter_hs":[3,4,5],
+"mlp_hidden_units":[],
+"dropout_rate":0.5,
+"shuffle_batch":true,
+"n_epochs":5,
+"batch_size":50,
+"lr_decay":0.95,
+"conv_non_linear":"relu",
+"mode":"multichannel"
+}
