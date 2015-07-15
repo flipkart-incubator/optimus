@@ -24,24 +24,7 @@ This project is also inspired by https://github.com/japerk/nltk-trainer, which a
 Code requires Python 2.7 and Theano 0.7. You can go to the [Setting Up page](https://github.com/flipkart-incubator/optimus/wiki/Setting-Up), for instructions on how to quickly set up the python environment required for this project. Requirements are also listed in the requirements.txt file.
 
 ## Quick Start
-### Train
-
-`python train.py 	<model config file path> <training data file path> <file path to store classifier model> <true/false(preprocessing flag)>`
-
-To train a toy model on a sample dataset run:
-
-`python train.py sample/configs/SampleStaticConfig.json sample/datasets/sst_small_sample.csv  sample/myFirstModel.p true`
-
-If this doesn't work, please go the Setting Up page, to ensure you have the dependencies installed.
-We've placed the configs that worked best for us on a variety of tasks in the directory sample/configs. Feel free to experiment with them. Click here for complete user guide.
-
-### Test
-
-`python testing.py <model file path> <testing file path> <folder to store detailed output analysis> <preprocess? (true/false)> <load word vectors? (true/false)>`
-
-To test the model you trained above, you can run:
-
-`python test.py sample/myFirstModel.p sample/datasets/sst_small_sample.csv sample/outputNonStatic true false`
+Visit the [Quick Start](https://github.com/flipkart-incubator/optimus/wiki/Quick-Start) guide to get started on using Optimus!
 
 ## Core contributors
 * Devashish Shankar ([@devashishshankar](https://github.com/devashishshankar))
