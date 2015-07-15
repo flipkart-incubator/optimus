@@ -43,3 +43,6 @@ To test the model you trained above, you can run:
 
 `python test.py sample/myFirstModel.p sample/datasets/sst_small_sample.csv sample/outputNonStatic true false`
 
+## Core contributors
+* Devashish Shankar ([@devashishshankar](https://github.com/devashishshankar))
+* Prerana Singhal 
