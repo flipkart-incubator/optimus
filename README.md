@@ -21,7 +21,7 @@ The improvements over the original code are:
 This project is also inspired by https://github.com/japerk/nltk-trainer, which allows users to easily train NLTK based statistical classifiers. 
 
 ## Requirements
-Code requires Python 2.7 and Theano 0.7. You can go to the Setting Up page, for instructions on how to quickly set up the python environment required for this project. Requirements are also listed in the requirements.txt file.
+Code requires Python 2.7 and Theano 0.7. You can go to the [Setting Up page](https://github.com/flipkart-incubator/optimus/wiki/Setting-Up), for instructions on how to quickly set up the python environment required for this project. Requirements are also listed in the requirements.txt file.
 
 ## Quick Start
 ### Train
