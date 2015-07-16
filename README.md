@@ -21,7 +21,7 @@ The improvements over the original code are:
 This project is also inspired by https://github.com/japerk/nltk-trainer, which allows users to easily train NLTK based statistical classifiers. 
 
 ## Why deep learning?
-Deep learning has dominated pattern recognition in the last few years, especially in image and speech. Recently deep learning models have outperformed statistical classifiers in a variety of NLP tasks as well. Also, one of the biggest advantage of using deep learning models is that task specific feature engineering is not required. The wiki contains a summary of exciting results we obtained using optimus, on a variety of different text classification tasks. Those interested in understanding how this model works can also check out my talk at Fifth elephant, in which I give an introduction to NLP using deep learning. Other good recommended resources can also be found [here].
+Deep learning has dominated pattern recognition in the last few years, especially in image and speech. Recently deep learning models have outperformed statistical classifiers in a variety of NLP tasks as well. Also, one of the biggest advantage of using deep learning models is that task specific feature engineering is not required. The wiki contains a summary of exciting results we obtained using optimus, on a variety of different text classification tasks. Those interested in understanding how this model works can also check out my [talk](https://fifthelephant.talkfunnel.com/2015/64-deep-learning-for-natural-language-processing) at Fifth elephant, in which I give an introduction to NLP using deep learning. Other good recommended resources can also be found [here].
 
 
 ## Requirements
