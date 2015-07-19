@@ -7,7 +7,7 @@ The main features of Optimus are:
 * Debug mode: which allows you to visualize what is happening in the internal layers of the model
 * Flask server for querying the trained model through an API
 
-This project is based on: https://github.com/yoonkim/CNN_sentence (Many thanks to Yoon for open sourcing his code for the paper: http://arxiv.org/abs/1408.5882, which is arguably the best generic Deep Learning based text classifier at this point)
+This project is based on: https://github.com/yoonkim/CNN_sentence (Many thanks to Yoon for open sourcing his code for the paper: http://arxiv.org/abs/1408.5882, which is arguably the best generic Deep Learning based text classifier at the time of writing.)
 The improvements over the original code are:
 * Multi-channel mode
 * Complete refactoring to make the code modular
@@ -17,31 +17,23 @@ The improvements over the original code are:
 * Model deployment on a Flask server
 * Multi Class classification [In progress]
 * Debug Mode [In progress]
+![img](https://drive.google.com/uc?id=1c0oa0YzKoBTD3JXztVTHtgTR_DTMXPKOWw)
 
 This project is also inspired by https://github.com/japerk/nltk-trainer, which allows users to easily train NLTK based statistical classifiers. 
 
+## Why deep learning?
+Deep learning has dominated pattern recognition in the last few years, especially in image and speech. Recently deep learning models have outperformed statistical classifiers in a variety of NLP tasks as well. Also, one of the biggest advantage of using deep learning models is that task specific feature engineering is not required. The wiki contains a summary of exciting results we obtained using optimus, on a variety of different text classification tasks. Those interested in understanding how this model works can also check out my [talk](https://fifthelephant.talkfunnel.com/2015/64-deep-learning-for-natural-language-processing) at Fifth elephant, in which I give an introduction to NLP using deep learning. Other good recommended resources can also be found [here].
+
+
 ## Requirements
-Code requires Python 2.7 and Theano 0.7. You can go to the [Setting Up page](https://github.com/flipkart-incubator/optimus/wiki/Setting-Up), for instructions on how to quickly set up the python environment required for this project. Requirements are also listed in the requirements.txt file.
+Code requires Python 2.7 and Theano 0.7. You can go to the [Setting Up page](https://github.com/flipkart-incubator/optimus/wiki/Setting-Up), for instructions on how to quickly set up the python environment required for Optimus. Requirements are also listed in the requirements.txt file.
 
-## Quick Start
-### Train
+## Start Using it
+Visit the [Quick Start](https://github.com/flipkart-incubator/optimus/wiki/Quick-Start) guide to get started on using Optimus! I have also written a small [tutorial on Optimus](http://deepthought.ghost.io/2015/07/16/train-an-optimum-text-classifier-using-optimus/) on my blog.
 
-`python train.py 	<model config file path> <training data file path> <file path to store classifier model> <true/false(preprocessing flag)>`
+You can compare models trained using optimus to statistical models by using https://github.com/japerk/nltk-trainer, an awesome tool for easily training statistical classifiers. If you get some good results on a dataset, I would love to know about them! 
 
-To train a toy model on a sample dataset run:
-
-`python train.py sample/configs/SampleStaticConfig.json sample/datasets/sst_small_sample.csv  sample/myFirstModel.p true`
-
-If this doesn't work, please go the Setting Up page, to ensure you have the dependencies installed.
-We've placed the configs that worked best for us on a variety of tasks in the directory sample/configs. Feel free to experiment with them. Click here for complete user guide.
-
-### Test
-
-`python testing.py <model file path> <testing file path> <folder to store detailed output analysis> <preprocess? (true/false)> <load word vectors? (true/false)>`
-
-To test the model you trained above, you can run:
-
-`python test.py sample/myFirstModel.p sample/datasets/sst_small_sample.csv sample/outputNonStatic true false`
+In case you face any issue, you can create an issue on github or send me a mail at devashish.shankar@flipkart.com. Suggestions and improvements are most welcome. Open github issues are a good place to start. A contributor's guide is under works.
 
 ## Core contributors
 * Devashish Shankar ([@devashishshankar](https://github.com/devashishshankar))
