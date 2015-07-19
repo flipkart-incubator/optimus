@@ -30,14 +30,18 @@ def load_wordvecs_from_binfile(word_vec_file,vocab=None):
                 f.read(binary_len)
         return word_vecs
 
+
 def load_wordvecs(word_vec_file,vocab=None):
     i = 0
     cwd = os.getcwd()
+    os.chdir(os.path.dirname(os.path.realpath(__file__)))
     while not os.path.isfile(word_vec_file):       #TODO this is a hack. Find better way
         word_vec_file='../'+word_vec_file
         i+=1
-        if i==3:
-            raise Exception("File "+word_vec_file+" not found. Searched "+i+" level above the cwd")
+        if i==4:
+            raise Exception("File "+word_vec_file+" not found. Searched "+str(i)+" level above the cwd: till "+os.path.abspath(word_vec_file))
+
+    word_vec_file = os.path.abspath(word_vec_file)
 
     os.chdir(cwd)
     if word_vec_file.endswith('.bin'):
