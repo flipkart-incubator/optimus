@@ -29,7 +29,7 @@ Deep learning has dominated pattern recognition in the last few years, especiall
 Code requires Python 2.7 and Theano 0.7. You can go to the [Setting Up page](https://github.com/flipkart-incubator/optimus/wiki/Setting-Up), for instructions on how to quickly set up the python environment required for Optimus. Requirements are also listed in the requirements.txt file.
 
 ## Start Using it
-Visit the [Quick Start](https://github.com/flipkart-incubator/optimus/wiki/Quick-Start) guide to get started on using Optimus! I have also written a small [tutorial on Optimus](http://deepthought.ghost.io/2015/07/16/train-an-optimum-text-classifier-using-optimus/) on my blog.
+Visit the [Quick Start](https://github.com/flipkart-incubator/optimus/wiki/Quick-Start) guide to get started on using Optimus! I have also written a small [tutorial on Optimus](http://devashishshankar.com/2015/07/21/train-an-optimum-text-classifier-using-optimus/) on my blog.
 
 You can compare models trained using optimus to statistical models by using https://github.com/japerk/nltk-trainer, an awesome tool for easily training statistical classifiers. If you get some good results on a dataset, I would love to know about them! 
 
