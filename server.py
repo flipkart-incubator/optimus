@@ -15,7 +15,7 @@ app.config['SECRET_KEY'] = 'F34TF$($e34D';   #Required for flask server TODO che
 @app.route('/')
 def home():
     #The tweet to classify
-    tweet=str(request.args['text']).lower()
+    tweet=str(request.args['text']).encode('utf-8').lower()
     #The path to file containing the model
     model=str(request.args['model'])
     #Should the tweet be preprocessed
