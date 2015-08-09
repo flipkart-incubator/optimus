@@ -37,4 +37,4 @@ In case you face any issue, you can create an issue on github or send me a mail 
 
 ## Core contributors
 * Devashish Shankar ([@devashishshankar](https://github.com/devashishshankar))
-* Prerana Singhal 
+* Prerana Singhal ([@singhalprerana](https://www.linkedin.com/in/singhalprerana))
