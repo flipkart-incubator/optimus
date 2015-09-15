@@ -174,6 +174,7 @@ class TextCNNModelTrainer(object):
             print('epoch %i, train perf %f %%, val perf %f' % (epoch, train_perf * 100., val_perf*100.))
             if val_perf >= best_val_perf:      #Only save the model if it's validation performace is better. This is to prevent overfitting
                 best_val_perf = val_perf
+                print "Saving the best model"
                 self.save_model(modelOutputPath)
         print "Training finished. Best model is at ",modelOutputPath
 
@@ -298,8 +299,8 @@ class TextCNNModelTrainer(object):
         """
         vocab_size = len(word_vecs)
         word_idx_map = dict()
-        W = np.zeros(shape=(vocab_size+1, self.trainingConfig.dim))
-        W[0] = np.zeros(self.trainingConfig.dim)
+        W = np.zeros(shape=(vocab_size+1, self.trainingConfig.dim),dtype=theano.config.floatX)
+        W[0] = np.zeros(self.trainingConfig.dim,dtype=theano.config.floatX)
         i = 1
         for word in word_vecs:     #Iterate over keys
             W[i] = word_vecs[word]
