@@ -1,6 +1,8 @@
 from collections import defaultdict
 import csv
 import re
+import sys
+from pprint import pprint
 
 
 def build_data(fname,preprocess=True):
@@ -15,8 +17,12 @@ def build_data(fname,preprocess=True):
     vocab = defaultdict(float)
     labels=[]
     rows = []
+    csv.field_size_limit(sys.maxsize)
     with open(fname, "rb") as f:
-        reader = csv.DictReader(f)
+        dialect = csv.Sniffer().sniff(f.readline())
+        f.seek(0)
+        reader = csv.DictReader(f,None,None,None,dialect)
+       
         for line in reader:
             label = line['labels']
             rows.append((label,line['text']))  # Tuple: (label,text)
