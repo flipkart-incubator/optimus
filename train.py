@@ -14,6 +14,7 @@ if __name__=="__main__":
         print "\t<training data file path>"
         print "\t<file path to store classifier model>"
         print "\t<true/false(preprocessing flag)>"
+        print "\t<overrides (optional)>"
         exit(0)
 
     #processing..
@@ -21,8 +22,13 @@ if __name__=="__main__":
     train_data_file=sys.argv[2]
     model_output_file=sys.argv[3]
     preprocess=sys.argv[4].lower()
+    if len(sys.argv)==6:
+        overrideString = sys.argv[5]
+        overrides = dict(s.split('=') for s in overrideString.split(","))
+    else:
+        overrides = {}
 
-    training_config = config.get_training_config_from_json(config_file)
+    training_config = config.get_training_config_from_json(config_file,overrides)
     sentences, vocab, labels = datasets.build_data(train_data_file,preprocess)
     print "Dataset loaded"
     word_vecs = wordvecs.load_wordvecs(training_config.word2vec,vocab)

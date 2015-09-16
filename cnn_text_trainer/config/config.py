@@ -32,9 +32,11 @@ def check_training_mode(str):
         raise KeyError(str+' not a valid training mode')
     return str
 
-def get_training_config_from_json(file):
+def get_training_config_from_json(file,overrides={}):
     with open(file,'rb') as f:
         jsonConfigs = json.loads(f.read())
+        for k,v in overrides.iteritems():
+            jsonConfigs[k] = int(v)
         return TrainingConfig(dim=jsonConfigs.get('dim',300),
                               word2vec=jsonConfigs.get('word2vec','GoogleNews-vectors-negative300.bin'),
                               mode=check_training_mode(jsonConfigs.get('mode','static')),
