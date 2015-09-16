@@ -2,7 +2,6 @@ from collections import defaultdict
 import csv
 import re
 import sys
-from pprint import pprint
 
 
 def build_data(fname,preprocess=True):
