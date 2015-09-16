@@ -2,6 +2,7 @@ import csv
 import os
 import sys
 import cPickle
+import operator
 from cnn_text_trainer.rw import datasets
 
 __author__ = 'devashish.shankar'
@@ -23,7 +24,7 @@ def evaluate(data,outputf):
     filep.writerow(["Accuracy ",str(perf*100)+"%"])
     filep.writerow([])
     print "Performance: "+str(perf*100)+"%\n"
-
+    data.sort(key=operator.itemgetter(0),reverse=True)
     y_pred=[row[1] for row in data]
     y_true=[row[2] for row in data]
     for n in labels:
