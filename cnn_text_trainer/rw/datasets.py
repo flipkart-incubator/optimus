@@ -3,7 +3,6 @@ import csv
 import re
 import sys
 
-
 def build_data(fname,preprocess=True):
     """
     Reads a CSV file with headers 'labels' and 'text' (containing label string and text respectively)
@@ -16,14 +15,17 @@ def build_data(fname,preprocess=True):
     vocab = defaultdict(float)
     labels=[]
     rows = []
+    count = 0
     csv.field_size_limit(sys.maxsize)
     with open(fname, "rb") as f:
         dialect = csv.Sniffer().sniff(f.readline())
         f.seek(0)
-        reader = csv.DictReader(f,None,None,None,dialect)
+        reader = csv.DictReader((line.replace('\0','') for line in f),None,None,None,dialect)
        
         for line in reader:
             label = line['labels']
+            print count
+            count = count + 1
             rows.append((label,line['text']))  # Tuple: (label,text)
             labels=labels+[label]
     labels = list(set(labels))
