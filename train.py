@@ -24,7 +24,9 @@ if __name__=="__main__":
 
     training_config = config.get_training_config_from_json(config_file)
     sentences, vocab, labels = datasets.build_data(train_data_file,preprocess)
+    print "Dataset loaded"
     word_vecs = wordvecs.load_wordvecs(training_config.word2vec,vocab)
+    print "Loaded word vecs from file"
 
     if training_config.mode=="multichannel":
         nntrainer = MultiChannelTrainer(training_config,word_vecs,sentences,labels)
