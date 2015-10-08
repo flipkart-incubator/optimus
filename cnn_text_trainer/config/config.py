@@ -36,6 +36,7 @@ def get_training_config_from_json(file,overrides={}):
     with open(file,'rb') as f:
         jsonConfigs = json.loads(f.read())
         for k,v in overrides.iteritems():
+            print "Overriding ",k," with value ",v
             jsonConfigs[k] = int(v)
         return TrainingConfig(dim=jsonConfigs.get('dim',300),
                               word2vec=jsonConfigs.get('word2vec','GoogleNews-vectors-negative300.bin'),
