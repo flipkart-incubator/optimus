@@ -24,7 +24,8 @@ def build_data(fname,preprocess=True):
        
         for line in reader:
             label = line['labels']
-            print count
+            if count % 1000 == 0:
+                print "Reading line no. ",count
             count = count + 1
             rows.append((label,line['text']))  # Tuple: (label,text)
             labels=labels+[label]
