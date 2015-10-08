@@ -1,7 +1,7 @@
 from collections import defaultdict
 import csv
 import re
-import sys
+
 
 def build_data(fname,preprocess=True):
     """
@@ -15,22 +15,19 @@ def build_data(fname,preprocess=True):
     vocab = defaultdict(float)
     labels=[]
     rows = []
-    count = 0
-    csv.field_size_limit(sys.maxsize)
     with open(fname, "rb") as f:
-        dialect = csv.Sniffer().sniff(f.readline())
-        f.seek(0)
-        reader = csv.DictReader((line.replace('\0','') for line in f),None,None,None,dialect)
-       
+        reader = csv.DictReader(f)
+        count = 0
         for line in reader:
-            label = line['labels']
-            if count % 1000 == 0:
+            if count%1000 == 0:
                 print "Reading line no. ",count
-            count = count + 1
+            count+=1
+            label = line['labels']
             rows.append((label,line['text']))  # Tuple: (label,text)
             labels=labels+[label]
     labels = list(set(labels))
     labels.sort()
+    print labels
     labelIdToLabel = dict(zip(labels,range(len(labels))))
     for row in rows:
         y=labelIdToLabel[row[0]]
