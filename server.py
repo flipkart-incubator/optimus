@@ -12,6 +12,12 @@ __author__ = 'devashish.shankar'
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'F34TF$($e34D';   #Required for flask server TODO check
 
+
+@app.route('/healthcheck')
+def healthcheck():
+    return {}
+
+
 @app.route('/')
 def home():
     #The tweet to classify
@@ -45,6 +51,7 @@ def home():
     for i in range(len(labels)):
         label_to_prob[labels[i]]=prob_pred[0][i]
     return json.dumps(label_to_prob)
+
 
 if __name__ == "__main__":
     if len(sys.argv)<4:
