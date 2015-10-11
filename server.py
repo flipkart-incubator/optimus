@@ -15,7 +15,7 @@ app.config['SECRET_KEY'] = 'F34TF$($e34D';   #Required for flask server TODO che
 
 @app.route('/healthcheck')
 def healthcheck():
-    return {}
+    return json.dumps({})
 
 
 @app.route('/')

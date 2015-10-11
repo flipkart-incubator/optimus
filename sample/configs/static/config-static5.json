@@ -12,5 +12,5 @@
 "batch_size":50,
 "lr_decay":0.95,
 "conv_non_linear":"relu",
-"mode":"multichannel"
+"mode":"static"
 }
