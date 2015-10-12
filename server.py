@@ -53,6 +53,14 @@ def home():
     return json.dumps(label_to_prob)
 
 
+import logging
+
+# Log only in production mode.
+if not app.debug:
+    stream_handler = logging.StreamHandler()
+    stream_handler.setLevel(logging.INFO)
+    app.logger.addHandler(stream_handler)
+
 if __name__ == "__main__":
     if len(sys.argv)<4:
         print "Usage: server.py"
@@ -70,4 +78,4 @@ if __name__ == "__main__":
 
     #run app..
 
-    app.run(debug=debug,host='0.0.0.0',port=port)
+    app.run(debug=debug,host='0.0.0.0',port=port,threaded=True)
