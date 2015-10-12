@@ -81,7 +81,7 @@ models=LimitedSizeDict(size_limit=10)
 #In memory dictionary which will load all the word vectors lazily
 wordvecs={}
 
-load_word_vecs = True
+load_word_vecs = False
 
 if __name__ == "__main__":
     if len(sys.argv)<4:
