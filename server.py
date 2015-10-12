@@ -1,4 +1,5 @@
 import cPickle
+from collections import OrderedDict
 import json
 from flask import Flask, request
 import sys
@@ -61,6 +62,27 @@ if not app.debug:
     stream_handler.setLevel(logging.INFO)
     app.logger.addHandler(stream_handler)
 
+class LimitedSizeDict(OrderedDict):
+  def __init__(self, *args, **kwds):
+    self.size_limit = kwds.pop("size_limit", None)
+    OrderedDict.__init__(self, *args, **kwds)
+    self._check_size_limit()
+
+  def __setitem__(self, key, value):
+    OrderedDict.__setitem__(self, key, value)
+    self._check_size_limit()
+
+  def _check_size_limit(self):
+    if self.size_limit is not None:
+      while len(self) > self.size_limit:
+        self.popitem(last=False)
+#In memory dictionary which will load all the models lazily
+models=LimitedSizeDict(size_limit=10)
+#In memory dictionary which will load all the word vectors lazily
+wordvecs={}
+
+load_word_vecs = False
+
 if __name__ == "__main__":
     if len(sys.argv)<4:
         print "Usage: server.py"
@@ -71,10 +93,6 @@ if __name__ == "__main__":
     port=int(sys.argv[1])
     debug = sys.argv[2].lower()=="true"
     load_word_vecs = sys.argv[3].lower()=="true"
-    #In memory dictionary which will load all the models lazily
-    models={}
-    #In memory dictionary which will load all the word vectors lazily
-    wordvecs={}
 
     #run app..
 
