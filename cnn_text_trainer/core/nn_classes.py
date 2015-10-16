@@ -158,16 +158,6 @@ class MLPDropout(object):
             # Grab all the parameters together.
             self.params = [ param for layer in self.dropout_layers for param in layer.params ]
 
-    '''
-    Lightweight constructor to be used when loading this on CPU from a GPU pickle file. Convert
-    CudaNDArray objects to TheanoSharedVariable before calling this.
-
-    layers should be an array of objects with two parameters W and b
-    '''
-    def __init__(self,layers,activations):
-        self.layers = layers
-        self.activations = activations
-
     def predict(self, new_data):
         next_layer_input = new_data
         for i,layer in enumerate(self.layers):
