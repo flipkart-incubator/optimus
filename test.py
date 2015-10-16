@@ -65,6 +65,8 @@ if __name__=="__main__":
         print "\t<true/false preprocess>"
         print "\t<load word vectors? (true/false). This will give accuracy gains, but will have a lot of memory pressure. If false, words not encountered during training are skipped while testing >"
         exit(0)
+    import theano
+    theano.config.experimental.unpickle_gpu_on_cpu = True
     testfile=sys.argv[2]
     modelfile=sys.argv[1]
     outputdir=sys.argv[3]
