@@ -3,6 +3,7 @@ from collections import OrderedDict
 import json
 from flask import Flask, request
 import sys
+import numpy
 from cnn_text_trainer.rw.datasets import clean_str
 
 __author__ = 'devashish.shankar'
@@ -50,7 +51,10 @@ def home():
 
     label_to_prob={}
     for i in range(len(labels)):
-        label_to_prob[labels[i]]=prob_pred[0][i]
+        if(isinstance(prob_pred[0][i], numpy.float32) or isinstance(prob_pred[0][i], numpy.float64)):
+            label_to_prob[labels[i]]=prob_pred[0][i].item()
+        else:
+            label_to_prob[labels[i]] = prob_pred[0][i]
     return json.dumps(label_to_prob)
 
 
