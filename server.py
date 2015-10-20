@@ -5,6 +5,7 @@ from flask import Flask, request
 import sys
 import numpy
 from cnn_text_trainer.rw.datasets import clean_str
+from gpu_to_cpu import UnpickledLayer
 
 __author__ = 'devashish.shankar'
 
@@ -13,6 +14,7 @@ __author__ = 'devashish.shankar'
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'F34TF$($e34D';   #Required for flask server TODO check
+
 
 
 @app.route('/healthcheck')
