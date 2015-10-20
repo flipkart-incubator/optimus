@@ -1,11 +1,10 @@
-import cPickle
+import pickle
 from collections import OrderedDict
 import json
 from flask import Flask, request
 import sys
 import numpy
 from cnn_text_trainer.rw.datasets import clean_str
-from gpu_to_cpu import UnpickledLayer
 
 __author__ = 'devashish.shankar'
 
@@ -15,6 +14,10 @@ __author__ = 'devashish.shankar'
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'F34TF$($e34D';   #Required for flask server TODO check
 
+class UnpickledLayer:
+   def __init__(self,W,b):
+       self.W = W
+       self.b = b
 
 
 @app.route('/healthcheck')
@@ -39,7 +42,7 @@ def home():
     if model not in models:
         print "Model not in memory: ",model
         print "Loading model"
-        models[model]=cPickle.load(open(model,"rb"))
+        models[model]=pickle.load(open(model,"rb"))
         if(load_word_vecs):
             print "Adding wordvecs"
             models[model].add_global_word_vecs(wordvecs)
