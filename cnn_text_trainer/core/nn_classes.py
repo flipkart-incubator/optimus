@@ -31,6 +31,13 @@ def Iden(x):
     y = x
     return(y)
 
+
+class UnpickledLayer:
+   def __init__(self,W,b):
+       self.W = W
+       self.b = b
+
+
 class HiddenLayer(object):
     """
     Class for HiddenLayer

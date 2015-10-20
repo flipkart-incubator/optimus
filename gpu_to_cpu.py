@@ -5,7 +5,7 @@ import theano
 from theano.tensor.sharedvar import TensorSharedVariable
 import pickle
 import sys
-from cnn_text_trainer.core.nn_classes import MLPDropout
+from cnn_text_trainer.core.nn_classes import MLPDropout, UnpickledLayer
 import os
 theano.config.experimental.unpickle_gpu_on_cpu = True
 
@@ -41,11 +41,6 @@ def cudaSharedVarToTensorSharedVarMatrix(cudaSharedVar):
     return TensorSharedVariable(name=cudaSharedVar.__dict__['name'],type=tensorType4d,value=value,strict=False)
 
 
-
-class UnpickledLayer:
-   def __init__(self,W,b):
-       self.W = W
-       self.b = b
 
 '''
 steps.

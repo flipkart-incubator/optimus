@@ -1,4 +1,4 @@
-import pickle
+
 from collections import OrderedDict
 import json
 from flask import Flask, request
@@ -14,11 +14,7 @@ __author__ = 'devashish.shankar'
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'F34TF$($e34D';   #Required for flask server TODO check
 
-class UnpickledLayer:
-   def __init__(self,W,b):
-       self.W = W
-       self.b = b
-
+import pickle
 
 @app.route('/healthcheck')
 def healthcheck():
