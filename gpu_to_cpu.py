@@ -58,7 +58,7 @@ def gpu_to_cpu(modelName):
         b = cudaSharedVarToTensorSharedVarVector(o.classifier.layers[i].b)
         wb = UnpickledLayer(w, b)
         wbclassifier.append(wb)
-    o.classifier = MLPDropout(wbclassifier, o.classifier.activations)
+    o.classifier = MLPDropout(layers=wbclassifier, activations=o.classifier.activations)
     filename, file_extension = os.path.splitext(modelName)
     pickle.dump(o, open(filename+"_cpu.p", 'w'))
     print('pickle.dumped')
