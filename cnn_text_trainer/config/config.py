@@ -17,6 +17,8 @@ class TrainingConfig:
         self.filter_h = filter_h
         self.filter_hs = filter_hs
         self.conv_features = conv_features
+        if mlp_hidden_units is None:
+            mlp_hidden_units = []
         self.mlp_hidden_units = mlp_hidden_units
         self.dropout_rate = dropout_rate
         self.shuffle_batch = shuffle_batch
