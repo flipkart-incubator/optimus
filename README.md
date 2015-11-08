@@ -11,6 +11,7 @@ This project is based on: https://github.com/yoonkim/CNN_sentence (Many thanks t
 The improvements over the original code are:
 * Multi-channel mode
 * Complete refactoring to make the code modular
+* GPU/CPU unpickling of models
 * Config driven, for easy experimentation
 * Model serialization/deserialization
 * Detailed evaluation results
